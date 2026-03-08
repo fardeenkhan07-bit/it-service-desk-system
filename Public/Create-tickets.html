@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service Desk | Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IT Service Desk Portal</h1>
+            <p>Incident Management & Analytics Dashboard</p>
+        </header>
+
+        <main class="dashboard-grid">
+            <section class="card form-section">
+                <h2>Create New Ticket</h2>
+                <form id="ticketForm">
+                    <div class="form-group">
+                        <label>Issue Title</label>
+                        <input type="text" id="title" placeholder="e.g., Server Connection Timeout" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="Hardware">Hardware</option>
+                            <option value="Software">Software</option>
+                            <option value="Network">Network</option>
+                            <option value="Database">Database</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <div class="priority-options">
+                            <label><input type="radio" name="priority" value="Low" checked> Low</label>
+                            <label><input type="radio" name="priority" value="Medium"> Medium</label>
+                            <label><input type="radio" name="priority" value="High"> High</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="description" rows="4" placeholder="Describe the technical issue..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Ticket</button>
+                </form>
+            </section>
+
+            <section class="card table-section">
+                <div class="table-header">
+                    <h2>Recent Tickets</h2>
+                    <button class="btn-export" onclick="alert('Exporting to Excel...')">Export Excel</button>
+                </div>
+                <div class="table-wrapper">
+                    <table id="ticketTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ticketBody">
+                            <tr>
+                                <td>#101</td>
+                                <td>VPN Login Failure</td>
+                                <td>Network</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Open</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
